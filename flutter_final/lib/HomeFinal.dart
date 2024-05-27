@@ -75,9 +75,12 @@ class _HomeFinalState extends ConsumerState<HomeFinal> {
                           children: [
                             Row(
                               children: [
-                                CircleAvatar(
-                                  backgroundImage: NetworkImage(product.picture.toString()),
-                                  radius: 18,
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: CircleAvatar(
+                                    backgroundImage: NetworkImage(product.picture.toString()),
+                                    radius: 18,
+                                  ),
                                 ),
                                 SizedBox(width: 10),
                                 Column(
@@ -92,61 +95,76 @@ class _HomeFinalState extends ConsumerState<HomeFinal> {
                                 )
                               ]
                             ),
-                            Row(
-                              children: [
-                                Text('Id order'),
-                                SizedBox(width: 100),
-                                Text(product.idOrder)
-                              ],
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Row(
+                                children: [
+                                  Text('Id order'),
+                                  SizedBox(width: 300),
+                                  Text(product.idOrder)
+                                ],
+                              ),
                             ),
                             SizedBox(height: 10),
-                            Row(
-                              children: [
-                                Text('Total Item'),
-                                SizedBox(width: 100),
-                                Text(product.totalItem)
-                              ],
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Row(
+                                children: [
+                                  Text('Total Item'),
+                                  SizedBox(width: 300),
+                                  Text(product.totalItem)
+                                ],
+                              ),
                             ),
-                            Row(
-                              children: [
-                                Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  child: Padding(
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Row(
+                                children: [
+                                  Padding(
                                     padding: const EdgeInsets.all(8.0),
-                                    child: CircleAvatar(
-                                      radius: 0.5,
-                                      backgroundColor: Colors.black,
-                                      child: Icon(Icons.chat_bubble),
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: CircleAvatar(
+                                          radius: 0.5,
+                                          backgroundColor: Colors.black,
+                                          child: Icon(Icons.chat_bubble),
+                                        ),
+                                      ),
                                     ),
                                   ),
-                                ),
-                                SizedBox(width: 10),
-                                Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Text('View Reviews'),
-                                  ),
-                                ),
-                                SizedBox(width: 10),
-                                Container(
-                                  decoration: BoxDecoration(
-                                    color: Colors.orange,
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Text(
-                                      'Buy Again',
-                                      style: TextStyle(color: Colors.white),
+                                  SizedBox(width: 50),
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Text('View Reviews'),
                                     ),
                                   ),
-                                ),
-                              ],
+                                  SizedBox(width: 50),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        color: Colors.orange,
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Text(
+                                          'Buy Again',
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ]
                         ),
