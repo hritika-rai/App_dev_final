@@ -5,18 +5,33 @@ import '../models/Products.dart';
 class CategoryRepository {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
+  // Future<List<Products>> getCategory() async {
+  //   try {
+  //     QuerySnapshot querySnapshot = await _firestore.collection('Products').get();
+  //     return querySnapshot.docs.map((doc) {
+  //       Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
+  //       print(data);
+  //       return Products.fromMap(data, doc.id);
+  //     }).toList();
+  //   } catch (e) {
+  //     throw Exception('Failed to fetch transactions: $e');
+  //   }
+  // }
+
   Future<List<Products>> getCategory() async {
-    try {
-      QuerySnapshot querySnapshot = await _firestore.collection('Products').get();
-      return querySnapshot.docs.map((doc) {
-        Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
-        print(data);
-        return Products.fromMap(data, doc.id);
-      }).toList();
-    } catch (e) {
-      throw Exception('Failed to fetch transactions: $e');
-    }
+  try {
+    QuerySnapshot querySnapshot = await _firestore.collection('Products').get();
+    return querySnapshot.docs.map((doc) {
+      Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
+      print('Document ID: ${doc.id}');
+      print('Data: $data');
+      return Products.fromMap(data, doc.id);
+    }).toList();
+  } catch (e) {
+    throw Exception('Failed to fetch transactions: $e');
   }
+}
+
 
   // getCategory() {}
 

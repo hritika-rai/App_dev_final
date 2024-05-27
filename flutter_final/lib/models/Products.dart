@@ -1,5 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-
 class Products {
   final String name;
   final String description;
@@ -23,13 +21,14 @@ class Products {
 
   factory Products.fromMap(Map<String, dynamic> data, String documentId) {
     return Products(
-      name: data['name'],
-      description: data['description'],
-      idOrder: data['idOrder'] ?? '',
-      category: data['category'] ?? '',
-      price: (data['price']),
-      picture: (data['picture']),
-      totalItem: (data['totalItem']),
+      name: data['name'] ?? 'Unknown',  
+      description: data['description'] ?? 'No description',  
+      idOrder: data['idOrder']?.toString() ?? '', 
+      category: data['category'] ?? 'Uncategorized', 
+      price: data['price']?.toString() ?? '0',  
+      picture: data['picture']?.toString() ?? '',  
+      totalItem: data['totalItem']?.toString() ?? '0', 
       documentId: documentId,
     );
-  }}
+  }
+}
