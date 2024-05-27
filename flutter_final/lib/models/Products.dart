@@ -7,6 +7,8 @@ class Products {
   final String category;
   final String price;
   final String documentId;
+  final String picture;
+  final String totalItem;
 
   Products({
     required this.name,
@@ -15,6 +17,8 @@ class Products {
     required this.category,
     required this.price,
     required this.documentId,
+    required this.picture,
+    required this.totalItem,
   });
 
   factory Products.fromMap(Map<String, dynamic> data, String documentId) {
@@ -24,6 +28,8 @@ class Products {
       idOrder: data['idOrder'] ?? '',
       category: data['category'] ?? '',
       price: (data['price']),
+      picture: (data['picture']),
+      totalItem: (data['totalItem']),
       documentId: documentId,
     );
   }}

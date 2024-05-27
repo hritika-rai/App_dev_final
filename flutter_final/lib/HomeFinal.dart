@@ -80,16 +80,94 @@ class _HomeFinalState extends ConsumerState<HomeFinal> {
                   itemBuilder: (context, index) {
                     final product = filteredProducts[index];
                     return ListTile(
+                      
                       contentPadding: EdgeInsets.symmetric(vertical: 8),
-                      title: Text(product.category),
-                      trailing: Text(
-                        '\$${product.price}',
-                        style: TextStyle(
-                          color: Colors.green,
-                          fontWeight: FontWeight.bold,
-                        ),
+                      title: Padding(
+                        padding: EdgeInsets.symmetric(vertical: 8),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  CircleAvatar(
+                                    backgroundImage: NetworkImage(
+                                        product.picture.toString()),
+                                    radius: 18,
+                                  ),
+                                  SizedBox(width: 10,),
+                                  Column(
+                                    children: [
+                                      Text(product.name),
+                                      SizedBox(height: 5,),
+                                      Text(product.description),
+                                      SizedBox(height: 5,),
+                                      Text(product.price),
+                                    ],
+                                  )
+                                ]
+                               ),
+                               Row(
+                                children: [
+                                  Text('Id order'),
+                                  SizedBox(width: 100),
+                                  Text(product.idOrder)
+                                ],
+                               ),
+                               SizedBox(height: 10),
+                               Row(
+                                children: [
+                                  Text('Total Item'),
+                                  SizedBox(width: 100),
+                                  Text(product.totalItem)
+                                ],
+                               ),
+                               Row(
+                                children: [
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: CircleAvatar(
+                                        radius:0.5,
+                                        backgroundColor: Colors.black,
+                                        child: Icon(Icons.chat_bubble),
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(width: 10,),
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Text(
+                                        'View Reviews'
+                                      )
+                                    ),
+                                  ),
+                                  SizedBox(width: 10,),
+                                  Container(
+                                    color: Colors.orange,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Text(
+                                        'Buy Again',
+                                        style: TextStyle(color: Colors.white),
+                                      )
+                                    ),
+                                  ),
+                                ],
+                               ),
+                            ]
+                          ),
                       ),
-                      onTap: () {},
+                    
                     );
                   },
                 ),
