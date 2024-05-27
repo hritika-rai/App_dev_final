@@ -37,19 +37,6 @@ class _HomeFinalState extends ConsumerState<HomeFinal> {
                 padding: EdgeInsets.symmetric(vertical: 20, horizontal: 16),
                 child: Column(
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'hi',
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 16),
                     Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
